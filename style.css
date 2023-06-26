@@ -1,0 +1,120 @@
+/* font-family: 'Comfortaa', cursive;
+font-family: 'Oswald', sans-serif;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Saira Condensed', sans-serif; */
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: yellow;
+  padding: 2rem;
+  color: rgb(83, 183, 190);
+  line-height: 1.6rem;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: rgb(222, 114, 61);
+}
+
+h1 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.5rem;
+  /* font-weight: bolder; */
+  margin: 1rem auto;
+  color: rgb(222, 114, 61);
+  z-index: 1;
+}
+
+h3 {
+  font-family: "Comfortaa", cursive;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  font-size: 20px;
+  text-align: center;
+}
+
+h4 {
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  font-size: 8px;
+}
+
+.body-text {
+  color: rgb(83, 183, 190);
+}
+
+section {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main img {
+  margin: 5rem 0;
+  max-height: 200px;
+  transition: transform 0.3s;
+}
+
+section img:hover {
+  border: 5px solid rgb(222, 114, 61);
+  border-radius: 8px;
+  cursor: pointer;
+  transform: scale(1.5);
+  margin-left: 50px;
+  margin-right: 50px;
+  box-shadow: 5px 5px 5px 0.1px rgb(139, 71, 37);
+}
+
+section.no-voting img:hover {
+  opacity: 50%;
+  transition: none;
+  transform: none;
+  border: none;
+}
+
+/* div {
+  max-width: 200px;
+} */
+
+section + div {
+  background-color: darkgoldenrod;
+  color: lightgray;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  margin: 1rem;
+  max-width: 200px;
+  pointer-events: none;
+  cursor: not-allowed;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+section + div.clicks-allowed {
+  background-color: orangered;
+  color: white;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+section + div.clicks-allowed:hover {
+  background-color: blue;
+}
+
+ul {
+  margin: 1rem 0;
+}
+
+li {
+  line-height: 1.6;
+}
