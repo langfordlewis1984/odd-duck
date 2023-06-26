@@ -108,7 +108,7 @@ section + div.clicks-allowed {
 }
 
 section + div.clicks-allowed:hover {
-  background-color: blue;
+  background-color: rgb(83, 183, 190);
 }
 
 ul {
