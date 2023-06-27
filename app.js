@@ -25,18 +25,36 @@ function Product(name, src) {
   allProducts.push(this);
 }
 
+let previousProducts = [];
+
 function renderProducts() {
   let product1 = getRandomNumber();
-  let product2 = getRandomNumber();
-  let product3 = getRandomNumber();
 
-  while (product1 === product2) {
+  while (previousProducts.includes(product1)) {
+    product1 = getRandomNumber();
+  }
+
+  let product2 = getRandomNumber();
+
+  while (previousProducts.includes(product2) || product2 === product1) {
     product2 = getRandomNumber();
   }
 
-  while (product2 === product3) {
+  let product3 = getRandomNumber();
+
+  while (
+    previousProducts.includes(product3) ||
+    product3 === product1 ||
+    product3 === product2
+  ) {
     product3 = getRandomNumber();
   }
+  {
+    product3 = getRandomNumber();
+  }
+
+  previousProducts = [product1, product2, product3];
+
   image1.src = allProducts[product1].src;
   image2.src = allProducts[product2].src;
   image3.src = allProducts[product3].src;
@@ -105,6 +123,8 @@ const wineGlass = new Product("wine-glass", "images/wine-glass.jpg");
 renderProducts();
 
 productContainer.addEventListener("click", handleProductClick);
+
+(Chart.defaults.font.family = "Space Grotesk"), "fec601";
 
 function renderChart() {
   const productNames = [];
