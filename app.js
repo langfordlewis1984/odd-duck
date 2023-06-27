@@ -1,17 +1,15 @@
-// 5 clicks
-
 "use strict";
 
 // console.log("ducks");
 
-let productContainer = document.querySelector("section");
-let resultsButton = document.querySelector("section + div");
+const productContainer = document.querySelector("section");
+const resultsButton = document.querySelector("section + div");
 const image1 = document.querySelector("section img:first-child");
 const image2 = document.querySelector("section img:nth-child(2)");
 const image3 = document.querySelector("section img:nth-child(3)");
 
 let clicks = 0;
-let maxClicksAllowed = 25;
+const maxClicksAllowed = 5;
 
 let allProducts = [];
 
@@ -66,7 +64,8 @@ function handleProductClick(event) {
     if (clicks === maxClicksAllowed) {
       productContainer.removeEventListener("click", handleProductClick);
       productContainer.className = "no-voting";
-      resultsButton.addEventListener("click", renderResults);
+      resultsButton.addEventListener("click", renderChart);
+      resultsButton.addEventListener("click", renderChart2);
       resultsButton.className = "clicks-allowed";
     } else {
       renderProducts();
@@ -106,3 +105,83 @@ const wineGlass = new Product("wine-glass", "images/wine-glass.jpg");
 renderProducts();
 
 productContainer.addEventListener("click", handleProductClick);
+
+function renderChart() {
+  const productNames = [];
+  const productViews = [];
+  const productClicks = [];
+
+  for (let i = 0; i < allProducts.length; i++) {
+    productNames.push(allProducts[i].name);
+    productViews.push(allProducts[i].views);
+    productClicks.push(allProducts[i].clicks);
+  }
+
+  const data = {
+    labels: productNames,
+    datasets: [
+      {
+        label: "Clicks",
+        data: productClicks,
+        backgroundColor: ["#fec601"],
+        borderColor: ["#02361882"],
+        borderWidth: 1,
+      },
+      {
+        label: "Views",
+        data: productViews,
+        backgroundColor: ["#02361882"],
+        borderColor: ["#fec601"],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  const config = {
+    type: "bar",
+    data: data,
+  };
+
+  const productChart = document.getElementById("chart");
+  const myChart = new Chart(productChart, config);
+}
+
+function renderChart2() {
+  const productNames = [];
+  const productViews = [];
+  const productClicks = [];
+
+  for (let i = 0; i < allProducts.length; i++) {
+    productNames.push(allProducts[i].name);
+    productViews.push(allProducts[i].views);
+    productClicks.push(allProducts[i].clicks);
+  }
+
+  const data = {
+    labels: productNames,
+    datasets: [
+      {
+        label: "Clicks",
+        data: productClicks,
+        backgroundColor: ["#fec601"],
+        borderColor: ["#02361882"],
+        borderWidth: 1,
+      },
+      {
+        label: "Views",
+        data: productViews,
+        backgroundColor: ["#02361882"],
+        borderColor: ["#fec601"],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  const config = {
+    type: "line",
+    data: data,
+  };
+
+  const productChart2 = document.getElementById("chart2");
+  const myChart = new Chart(productChart2, config);
+}

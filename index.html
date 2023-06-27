@@ -10,17 +10,22 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&family=Oswald:wght@500&family=Press+Start+2P&family=Saira+Condensed:wght@100;200&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
+
   <body>
     <header>
+      <img class="bg-duck" src="images/duck-walk.gif" alt="duck walk gif" />
       <h1>oddDUCK</h1>
     </header>
     <main>
-      <h3>Welcome fellow worker</h3>
+      <h3>Welcome fellow worker!</h3>
       <p class="body-text">
         Please select one of the three choices of product presented to you:
       </p>
@@ -30,11 +35,15 @@
         <img src="" alt="" />
       </section>
       <div>View Results</div>
-      <ul></ul>
+      <!-- <ul></ul> -->
+      <div>
+        <canvas id="chart"></canvas>
+      </div>
+      <div><canvas id="chart2"></canvas></div>
     </main>
+    <script src="app.js"></script>
     <footer>
       <h4>&#169; oddDUCK Products</h4>
     </footer>
-    <script src="app.js"></script>
   </body>
 </html>

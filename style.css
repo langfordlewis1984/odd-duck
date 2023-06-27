@@ -1,14 +1,12 @@
-/* font-family: 'Comfortaa', cursive;
-font-family: 'Oswald', sans-serif;
-font-family: 'Press Start 2P', cursive;
-font-family: 'Saira Condensed', sans-serif; */
+/* font-family: 'Press Start 2P', cursive;
+font-family: 'Space Grotesk', sans-serif; */
 * {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   box-sizing: border-box;
 }
 
 body {
-  background-color: yellow;
+  background-color: rgb(102, 204, 102);
   padding: 2rem;
   color: rgb(83, 183, 190);
   line-height: 1.6rem;
@@ -17,20 +15,36 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: rgb(222, 114, 61);
+  color: #fec601;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.bg-duck {
+  position: relative;
+  /* margin-left: 300px; */
+  max-height: 300px;
 }
 
 h1 {
+  position: absolute;
   font-family: "Press Start 2P", cursive;
-  font-size: 1.5rem;
+  font-size: 3rem;
   /* font-weight: bolder; */
   margin: 1rem auto;
-  color: rgb(222, 114, 61);
+  color: #fec601;
   z-index: 1;
+  -webkit-text-stroke: 2px black;
+  text-shadow: 0 0 10px #fec601;
 }
 
 h3 {
-  font-family: "Comfortaa", cursive;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
   letter-spacing: 0.05rem;
   font-size: 20px;
@@ -41,10 +55,13 @@ h4 {
   font-family: "Press Start 2P", cursive;
   text-align: center;
   font-size: 8px;
+  -webkit-text-stroke: 0.3px black;
+  text-shadow: 0 0 2px #023618;
+  margin-top: 2rem;
 }
 
 .body-text {
-  color: rgb(83, 183, 190);
+  color: #023618;
 }
 
 section {
@@ -60,19 +77,20 @@ main {
 }
 
 main img {
-  margin: 5rem 0;
-  max-height: 200px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  max-height: 175px;
   transition: transform 0.3s;
 }
 
-section img:hover {
-  border: 5px solid rgb(222, 114, 61);
+main img:hover {
+  border: 5px solid #fec601;
   border-radius: 8px;
   cursor: pointer;
   transform: scale(1.5);
   margin-left: 50px;
   margin-right: 50px;
-  box-shadow: 5px 5px 5px 0.1px rgb(139, 71, 37);
+  box-shadow: 2px 2px 2px 0.1px #02361882;
 }
 
 section.no-voting img:hover {
@@ -87,7 +105,7 @@ section.no-voting img:hover {
 } */
 
 section + div {
-  background-color: darkgoldenrod;
+  background-color: #ffc80077;
   color: lightgray;
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
@@ -101,14 +119,14 @@ section + div {
 }
 
 section + div.clicks-allowed {
-  background-color: orangered;
+  background-color: #fec601;
   color: white;
   cursor: pointer;
   pointer-events: auto;
 }
 
 section + div.clicks-allowed:hover {
-  background-color: rgb(83, 183, 190);
+  background-color: #ffc80077;
 }
 
 ul {
@@ -117,4 +135,9 @@ ul {
 
 li {
   line-height: 1.6;
+}
+
+canvas {
+  width: 75%;
+  height: 500px;
 }
