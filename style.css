@@ -88,7 +88,7 @@ main img:hover {
   border: 5px solid #fec601;
   border-radius: 8px;
   cursor: pointer;
-  transform: scale(1.5);
+  transform: scale(1.2);
   margin-left: 50px;
   margin-right: 50px;
   box-shadow: 2px 2px 2px 0.1px #02361882;
