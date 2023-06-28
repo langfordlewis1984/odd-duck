@@ -49,9 +49,6 @@ function renderProducts() {
   ) {
     product3 = getRandomNumber();
   }
-  {
-    product3 = getRandomNumber();
-  }
 
   previousProducts = [product1, product2, product3];
 
